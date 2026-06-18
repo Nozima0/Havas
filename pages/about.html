@@ -3,10 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="https://media.licdn.com/dms/image/v2/C4D0BAQGGFV6veN8YKA/company-logo_200_200/company-logo_200_200/0/1662731030943/havasfood_logo?e=2147483647&v=beta&t=4laD87IYO2Trmz9KWvZo8Tk1fh7qD1n0jkVCOrEeo4k">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.js" integrity="sha512-GvouLVZT+gJSJW5eOfpG46xTaBb2c3VeNnbzmDYTRQkFlgvxNhnzZQqiQ/jAyAYPh+a9roBvAHJP6zvXIVq34Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>About</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
     <!-- Nozima -->
 </head>
 <body>
+
+
+
+    <header class="w-full bg-white font-sans text-gray-800 selection:bg-yellow-400">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
     
+    <div class="flex items-center gap-4">
+      <div class="w-16 h-16 shrink-0">
+        <img 
+          src="../images/logo.png" 
+          alt="Havas Logo" 
+          class="w-full h-full object-contain"
+        />
+      </div>
+      
+      <div class="text-sm font-semibold text-gray-700 leading-tight">
+        +998(71)205-95-95
+      </div>
+    </div>
+
+    <div class="flex flex-1 items-center justify-center gap-6 w-full max-w-3xl">
+      <div class="flex items-center gap-3 text-xl text-gray-600">
+        <a href="#" class="hover:text-amber-600 transition-colors"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-blue-600 transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+        <a href="#" class="hover:text-sky-500 transition-colors"><i class="fab fa-telegram"></i></a>
+      </div>
+
+      <div class="flex flex-1 relative max-w-xl">
+        <input 
+          type="text" 
+          placeholder="Поиск..." 
+          class="w-full border border-gray-300 rounded-full py-2.5 pl-5 pr-28 outline-none focus:border-orange-500 text-sm transition-colors"
+        />
+        <button class="absolute right-0 top-0 bottom-0 bg-[#e86123] hover:bg-[#d0521a] text-white px-7 rounded-full text-sm font-medium transition-colors">
+          Поиск
+        </button>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3 text-sm font-medium text-gray-400">
+      <a href="#" class="text-black border-b-2 border-black pb-0.5">Ru</a>
+      <a href="#" class="hover:text-black transition-colors">Uz</a>
+      <a href="#" class="hover:text-black transition-colors">En</a>
+    </div>
+
+  </div>
+
+  <div class="border-b border-gray-200"></div>
+
+  <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-y-4">
+    <nav class="flex flex-wrap items-center gap-1 md:gap-2 text-xs md:text-sm font-bold tracking-wide text-black uppercase">
+      <a href="../index.html" class="bg-[#fcdb00] hover:bg-[#ebd200] px-5 py-2.5 rounded-full text-black transition-colors">
+        Главная
+      </a>
+      <a href="./about.html" class="px-3 py-2 hover:text-gray-600 transition-colors">
+        О нас
+      </a>
+      <a href="./magazin.html" class="px-3 py-2 hover:text-gray-600 transition-colors">
+        Магазины
+      </a>
+      <a href="./yengilik.html" class="px-3 py-2 hover:text-gray-600 transition-colors">
+        Новости
+      </a>
+      <div class="relative group">
+        <button class="px-3 py-2 hover:text-gray-600 flex items-center gap-1 transition-colors uppercase font-bold">
+          Специальные предложения
+          <i class="fas fa-chevron-down text-[10px]"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="flex items-center gap-1 md:gap-2 text-xs md:text-sm font-bold tracking-wide text-black uppercase">
+      <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+        Для партнёров
+      </a>
+      <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+        Вакансии
+      </a>
+    </div>
+  </div>
+</header>
+    
+
+    <main>
+        <section class="mt-[40px]"> 
+            <div class="container mx-auto px-5">
+                <div>
+                    <ul class="flex gap-[40px]">
+                        <li>
+                            <h2 class="text-black text-[24px] font-bold pb-[40px]">О НАС</h2>
+                            <h1 class="text-black text-[60px] font-bold mt-[35px]">HAVAS</h1>
+                            <p class="text-black font-normal text-[40px]">Сеть дискаунтеров</p>
+                            <p class="text-black font-normal text-[40px] mb-[60px]">"У дома"</p>
+                            <p class="text-black font-normal text-[20px] ">Мы предлагаем нашим покупателям качественные <br> продукты по выгодной цене. В наших магазинах <br> представлены товары известных мировых и <br> локальных брендов, а также товары собственного <br> производства.</p>
+                        </li>
+
+                        <li>
+                            <img src="../images/about/cardone.png" alt="card one" class="w-[595px] h-[523px]">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mt-[92px] mb-[60px]">
+            <div class="container mx-auto px-5">
+                <div>
+                    <img src="../images/about/skrin.png" alt="skrin">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="py-[60px]">
+            <div class="container mx-auto px-5">
+                <div class="flex flex-wrap">
+                    <img src="../images/about/one.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/two.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/three.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/four.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/five.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/six.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/seven.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/eight.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/nine.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/ten.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                    <img src="../images/about/eleven.png" alt="cards" class="w-[374px] h-[257px] p-[5px]">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-[60px]">
+            <div class="container mx-auto px-5 ">
+                <div class="flex gap-[90px]">
+                    <div >
+                        <h2 class="text-[44px] text-black font-normal mb-[10px]">Немного о нас</h2>
+
+                    <p class="text-[19px] text-bold font-normal">Дискаунтер — формат розничной торговли, предоставляющий потребителю качественную <br> продукцию по максимально низким ценам, работающий в формате «магазин у дома». Один из <br> примечательных аспектов сети Havas — низкая цена на всю продукцию, комфортные условия в <br> магазинах, а также близость к дому. Сегодня Havas есть во всех районах Ташкента, что помогает <br> жителям столицы покупать товары в удобных для них магазинах, не тратя на это много времени и <br> сил. Но все успехи сети дискаунтера — это результат любви и доверия покупателей к Havas. В <br> свою очередь команда Havas благодарит всех покупателей и клиентов сети. Именно они <br> вдохновляют команду Havas и побуждают к созданию новых удобств и возможностей.</p>
+
+                    <p>-</p>
+
+                    <p class="text-[19px] font-normal text-black">В ближайшие годы сеть Havas планирует открыть свои удобные, доступные и комфортные <br> магазины во всех городах и районах Узбекистана.</p>
+                    </div>
+
+                    <div>
+                        <img src="../images/about/nmadir.png" alt="img">
+                    </div>
+                    
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="bg-[url(../images/bgimg.png)] bg-cover w-full pt-[60px]">
+            <div class="container mx-auto px-5">
+                <div class="flex gap-[40px]">
+                    <div>
+                        <h2 class="text-black text-[24px] font-bold inline-block shadow-yellow-500 pb-[40px] mt-[20px]">Хотите задать вопрос?</h2>
+                        <p class="mb-[10px] text-black text-[20px] font-medium">Позвоните нам</p>
+                        <p class="text-black text-[22px] font-medium mb-[10px]">tel:+998712059595</p>
+                        <p class="mb-[15px] text-black text-[20px]">Напишите нам</p>
+                        <form>
+                            <label class="">
+                                <input type="email" name="email" required placeholder="Напишите ваш e-mail" class="px-[30px] py-[8px] w-[556px] border-[1px] border-[#BDBDBD] rounded-[5px]">
+                                <p class="text-[#BDBDBD] text-[12px]">Обязательное поле для заполнения*</p>
+                            </label>
+                            <br><br>
+                            <label class="mt-[20px]">
+                                <textarea name="text" placeholder="Напишите сообщение..." cols="30" rows="5" class="px-[30px] py-[8px] w-[556px] border-[1px] border-[#BDBDBD] rounded-[5px]"></textarea>
+                            </label>
+                        </form>
+
+                        <button class="text-black bg-[#FADF00] mt-[25px] py-[10px] w-[166px] rounded-[50px] font-medium">Отправить</button>
+                    </div>
+
+                    <div>
+                         <iframe class="w-[560px] h-[360px] mt-[40px]" src="https://yandex.uz/map-widget/v1/?feedback=map%2Fedit&feedback-context=map.controls&from=api-maps&ll=69.562542%2C40.587507&origin=jsapi_2_1_79&pt=69.605889%2C40.839444~69.612060%2C40.848089~69.599620%2C40.867108~69.351917%2C40.900139~69.197968%2C40.814509~69.303139%2C40.996083~69.358432%2C41.037416~69.044910%2C40.869560~69.236333%2C41.004167~68.950806%2C40.863000&utm_source=jsapi&z=8" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+
+
+    </main>
+
+
+
+    <footer class="pt-[56px] pb-[20px]">
+        <div class="container mx-auto px-5">
+            <div class="flex border-b-[1px] border-[#BDBDBD] ">
+                <img src="../images/logo.png" alt="logo" class="w-[138px] h-[173px] mr-[140px]">
+
+                <ul class="flex mb-[40px] ">
+                    <li class="mr-[140px]">
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">О нас</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Магазины</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Новости</p>
+                    </li>
+
+                    <li class="mr-[140px]">
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Специальные предложения</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Статьи</p>
+                    </li>
+
+                    <li class="mr-[140px]">
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Для партнёров</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Карьера</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Анкета</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex justify-between pt-[20px]">
+                <p class="text-[12px] ">Сайт разработан компанией Division</p>
+                <img src="../images/icons.png" alt="icons">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
