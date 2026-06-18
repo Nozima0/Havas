@@ -1,12 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Sherzod -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+  <link rel="icon"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAMAAAAt85rTAAABRFBMVEUBmTT+/v7/8RL/ZgAAmTT/YwD/8AD+/v3+ZgD+/f/+8hH98QAAmC4AnDUAlTX/7wAAkyL/9hKu17SNyZpfsHEAlDcAkRtRsWn7////XQAXoD/t+PAwqFEAnTkAmTj99xP9/fRCqV789oL8+9D8943/WQD9+K/8+tb6thD880D7yxD6ewf8/OX995r896b880v+2xP7bQbTchFejiv8+8b692D7wBLdbg744BT6rw79/e9LkS36pQv6jAumgBnr7BPHdBTsaQrA2x2w0SaegSLQcxJdsDD9nQe73sb89Wj79Xb+9DH7vQ39mA/89pL5dAm4dx1+hyWNhCSVhSArkjLkagCwfB1yiiViiyXX5x56uy8wpTOLwihltDEAlEH50RPQ2ySHwSiiySd6uTWQgSlqtX7Z7d2LyJbL5tKi169TkSX9iQk8rXOiAAAgAElEQVR4nM1d+1/TyrZPy6RJJklp0GKrNKlAgfIuFMpLBd9YEdSiV9374PZc3brv///7nVlrkqZtmklK8Zz1UaCvdL5Za9Z7ZpTMDZHGyMiUSpnq6lxzfW321elGvd2mNJttt+sbO69m3yw051arRom9t6ppNzWMjHJjVzaM1eb67E7bzE3mciYnjg6I/WGaOXi2vTG7Prdq3Ngoxg5QQ2YczK3vOBxDzmR4sj1EASLlv9m/HMNv0p21Oc7MG+Dk2DmoZarN+bppTk724Yql3ORkbmO+WR33aMYIUMvA3V9d22CMo1kUR+qLJHV6iQKF2cqklrF7Y301E4jBWGhsAA0tY8y9YTMu1zNsj1N2b3N59/XS0dELoKP9pde7y5t78KLTI8EMY3t+0TD+CwGWFhk6MxtSJI7j0c3l/bOVhloGUssqEjyqldXGytn+7h57n9PlJs0yjG9WxzWssQDUDK26UJ/MdflG2ZCvls7OGQoGamIocay12vnZ0maW8dILMbK+UC2NRVLHAdBYnA3bADbQ5aMVnbNrOLQQNXS1XFNXjq74bQlukmm+Wi2Vrj+46wFk97hkNOtmrss6urm/UgNZTIQuIF2t1VaWNj0urqigmMppGhmjej02Xgsgd1UW2oFaYZPp6qjB0KWDFsKo1s6PrjzPV75mrr2ulf5jADWjpK1zQw5Knknm5hGXS13XxXgn8C9ULHrj5LLV2mLUal2eMLFEJuObVPERlWPUjzYdB70ASnN0PVMSJuh3AzSMdToZmIPs0nlN7WMIR3GydfH07fZhh9iMKpWKzf+5ttU53H779KJ1wlCqE3rPB8u186WsR4X9yHnr2jXUzTUALlDULDTLRPMBU5c942QDb128O1QYHkYWUYDYL0IYVkIUF/6oKNvvLlp9M5ZpnfLZlZBUSs32Atc2o2EcDWC1mmnWfc3i0d2VEPP0BuOJvvV0W7ErDAiSwv8pShgl8X8RUrG2n27pXLq790itrewG9nGy3hzVvRmRg9Ud4WpShy41emRTVVsPtxnTFFuxlEREXEa2/c/Dyx5OqmX9ddYRTDRPVzMjeaqpATKrrmXWnBwKp5fdZ/6Jr1V0xoXW+w7D5vawTAZQYbKq8B+d90xaJ3wtxdwAnU1GnIs5c80YRUpTAzSqxiKTTvhSx9tvlMPMu3zXsYnlEiUxOF9mg+mJGAN5ZxB9s5GrL6bHlxYg454xayI+x9nl8wZ5x9A1PhxWmLgR104DrofYJ21iH37QORuRkUwXs7konNTZ9AYjLcDSYhuVC9OcKwH3uGi+ZUNDfTIyPs5D/t+uvG2Vdb0hLl5b8TVqrr2Y1rNJCdCYN1E6vb0HNTFXdDZZjg/5zb8WthBKPh0PjwNJZV7c2Z4ntM2skW4qpgCoacZq3RH+9FLw9cwqXDC9IhT/eBACdS66bpGqvvbQZOQ2DlKp0xQAq0ZzEh0zZ++83FV1H5hiyY8LWxek7doMom8X9fL5noM20WymyVElBcit7CzaBsfZL4MXyW26etxxQTrHTuyW2ZXOsWAimwflJQ9TVUzXJDf6iQFmDjZQu3h7K7WAe1uHNngpN0REsQ9bQlOrenllT6jTjeRCmgwgC/sWPcDnea/L6FIxq37ykcNjVv0GidgfG8BFnbuoYiaadNFIaDESAsw0TWQfPavpvtfy0LZvkHsIj9v+/AfVn4u1MwpRfy7XTKhMkwE01jAucvYaqF244evczNwbwOhalU4LJz373gY3GGwqmut458cBsMqcFwhqvWU/WlfV9/YY7UI8Qh5WvWfBZQNd8GVMTuXmjSS6JglA7RR8M+od1Xyns9WxxmTVkyBUFIt0WhhKNfTaEeamcqdJhFQKUCtVd3JcPVP6wHfNyg8ryvVcsvQgCfkgZodefkDBJOZ2mPaT6VM5QA3MA/UmA9ezse1aEdoleOZGsBOl8j8iHmb2AuPEyQ1DmpKSAGR3qA6VBqZeVDDtutqyKoo7iIEoxWJecf0HN0C20oIx8Om4x80FzdU1maKRACxpdQjdvc2ysA7qh0q020nIp09PPn/JF/P5mwFIFNf+oPq+6Sbw0NzISKILCcDqxiS/VUx9+tHZ28qwwT93eD2Cfnry13ObMxNuwhg1LWGqpvJWFcmD8hWoGnNDi2diLMBqZoe7n553hdOvoeuH9rAR5/8QGWmO8tHjP567Rc7MMU5IEJxD38svX3moaYzYCngsQOMU3bNdP3Y46QyN+Uj+cahCDQXBR1+//fkFUY6Jj4RdqnMibHF5GTzTyVMjTpMOB6gx+w76hfFPiOdl3Dj/9ai/pAt1T4by3xzleBxWHvC7lyIDWxM8nC3FxE8xADNvePRO+fxDfM8s1xqOMO9kIwiZ6TH1UxwTQmK5Wz4Pr9AersdUoYYBZPFDE/wXZ7MMoZ+uHtux2vF5JMCsaDigXj7m5qSC6Nrkmch1lTeBh2ZzBICZRRPs+57Pv+P4fFL+r9imA/qoOC7HnKfC/YSNimG+ObwiPFRED6C+Q7MNET0c23HyqSjFJ/EAHxft8alTmyHE+94QXSnVYaYiGiDz8LiDxoRrRZ3w8cVqQlL8FAvQ+SM/Lnj820jlmWDhuQcuzc4wpzQaIFegfFjeAxRQ9ZlN4qcQITQOIKXPZWrUr8ckRGgLTaM+4NOQTs6nElGjifiOwMA3Ji7lZZQvw3SMQCibgcyVzeeLSmJrQuwWIqwdIQ+bpUinLRrgKjigzjLGf/oJiXCueyn/VzzAT0UZa/KPuV+QR79ASRCTkBN0r2rLqGgOtChzGAGQOT51rkGZg43JFz0vkU8+PKmOkVyAiYBwZT+D9wOsjPtW1+74xmKP8zBXj8x5RwEszQM+2lAxfjiU5+QT6BjJJdzPohQoHPYvLmNm6AsivtM+FCasQXl8aL6JsvcDADWjtAj1B++BUKBvkxiwfKyOyTrPpTL+rdvYRgOHHcISwBelw923KtqwBzANJ6PKa4McrBpt/j3eEuYHIf6T45PoGEcm46T4daDtksGk6LAz9RNxl5nTJuLD8i7/+lw7Qs1EcBAshLOHEYTaqiQx0BIdw/wYyQVI/lGUDDhBWBKVQ3AtoUrZNITgMMJWDAJchBSMgxZebSRK7bpSHZOXiagdc4d4B9WXCAPC022QSZlQV6CC6MwN2PtBEeXdE9TZRwEtbyeK5GQ6hsr9mM8SGY+0GkRxt4WQ7kM+uD2gR/sAapk1HsMHAvpQagCRivH4HKkfE+iYIVdgMh4JUCEP0d6XeRqKTq5JRFQ7gPjDOwcLwSYgdBTISerHWBKExa8j2VEmX5VLdNlWeDsGzR1IRBT6X7ylMvSQqZ2EzqEbL2D0kUxCSXEgH9BDzrdhk5iQDgT4enmJZ6HM01IswCa2W6sY4r5PWj2Sx0qyK3yJb2GPkXFCnooCItgZ5pNqMQDrkARFE99oVRK6vmPQMX/GioCT/TLcDWduNwrpGZ9euXpvhqYHoLEAJvCqhi5MJ2kujLgSAftTBlCuY4YPhblsagOEFJJQ5kIm7HWHARolrMGfY47wYdIQnHBHOW54jtTZG1HHiK+vfMCU/gr0YLZ7fO4QQK20DmXA12V498nQFO/AF+Q/x0e7cfcfL5F/FIeP65gYDrJp2EB/BkqHuXUjEqBmaDBMD8tw6sfkfT0yAfsqTThZEl89VsZZeI8ZfV3H2mgpGmBmHUzEPkTx6lZifEQmYLH3H+m5BGD8DSKKjXWn8j6fKz150hDAEuQJszo6oYcpsu1FiYD9KbtF+T/irYRExpnHdiiCX0yyRSqZ0jqo0H0MIo+TCyiR+THOF8kV3OJjmYzHD8ay3WN02PYhblqIAghhoEPRBIIPk5TysUaMMj9GJg0SP4ZKZZzYHRQ8FfR5u1tv6gLknTCUOWkiyk1e9SISHeM8lpp5W+LHfJYnVckFIGQOG2dhc4CDmgFhEuZhJiY6dvJEe6hwNuz+S67gPpcEI1HBYB8xFsLYG5C92BgAaEApwtnFMPAiTeun1IjJ7j/TMRJfXV5FZYoUWxPLu9zad4sVgYi+yvES0Dl62WlmYHwwzqVCpmNIfD6AJrCjvENBzMIVMPavfFvoAzwwqe+F8kJEPk0pKN5RznpSDZGP1THUkco4XMU+VrEsyv21XLUPINgIDCN09TBNXZ3pmHhP9Ou//Jb6odeQmPkEOoYP5FANihU0tyAUKQDkuWyolWGvQWtoI0UUWTIj9umv5xXMVQ8Ti+cSX10m42Ig9qUOXjSPaFnUFALIU2lcQoWNeJssTYFEZDnfLCZxv/1p5/+F/Qikr9GG6ZjYK0hl3Ke36K8tcUXqqxnkYOkNJOtBxaiNVN3zxI3XMV2UDv367fMXReSqu99hF5/EaymZH+PfaVtpiJJhtpvIV7pejHfFbYQ+8UFeaukBKNExoZFCErdbXcFvIVYxMufb/diTZBxkQcUHVDO8ck/bRgjgHPdinCMMG4f3wkReVuYo9yDEVY8MJm+HymMNySVSPyZhYMpCe8g/HTlczSyGAL4BNw0D+VbSQNcHGK9jhkF1HA+rK/livB/DfPWEOoHY9iV2hIC7Nh8C2OY3Fvu11HfpupIkRiwWJKifr9/iXdksLSZNLRD3Pdg5bgqzIsut8Eh3FVTMCzQjnZT9LIl0TCxMCb5PkUntaIRYE1WP+HIu1KNKN12PfnY6I8gd5esBlN+BJ4kBBoX7BtSa1n0RLUHLyGZNF8neVCRxlK+Pj36WVqa6ZL9TRaGCr3LyAVYhkIBQXi930i2FGE3HpAHI/JgUkU2nHNSasmZVAOQ9I9Rb4eKrttI2XI2sYxIjTOFXEaXSCkIKajbZ9FP4mkAOMIstIw9Tdna67k1PwU9p2hRtUU0rwyKueQQIBQmKPTHqdkoOMh1zw3PwSQqALDDeVjEFzEtpdQMAHoCROEL1I6vj9eNL4ceMRs5fqdYmEgUiijJ3ZmASMoBzkC7EmvyzlC2B7k3rGHnOsY/sZ4AQ4/omAORWkGbRyj9N2/MoSfiNAWDKLkX7KXrUfFiT66WMohlgBa9g2ZX6D0k1B4ks4Xdtop9SAsRJiN3OudMMB+hArIs7EKRdi/sb/JiU7eyEYHJtCQyFwQCCI+qc8QV66lZqCZU0GV4f4B9p0gtK4K2pZ5A9PGBzEFpDHd5WoesXKY0EkRTnr0/O87QbK5CLblifm2MA13lClKIVfJf2Yvn44vy1iUobaQeG5L7rmvrJ9YxSmkVPG/OFKSWU5OPTRdcHKC0OD5C93fW3zVnGQa5EvWXofVXTrjNy44vzkFAT+zSOCFDegNJPJI8AwZfZYEoGytZY1j1Ja+YtWZOh/fnJp0ewl+FoANM36xPXxtwaVAqzmlKFdMwZoN5Kp7FIgkZmRvkvf377+sjfsTElwOcp8bG7LgIK6JoxD5RVE2Ml/txFWish0TH0jzwsB8rni3n7+bfHj2haXjoJd00KE5aZ0FkzV5UmdB40hKOW6kpEcWUNWDiDLJ6IdPPFovv8rycMZWJOjqBjAmetgZVQBaJd4Ym+TcdB4sZ3mFHqJ/yCZL3LmOl+YROTosjKAD4eYZsTghl8aF1jAHlZie6VRTCYMmMobWSOup7r8ob6L5/ZxKQSP4hKm/WjhoU9spiXWVcg57uJAA9TiqiscPk4WsAIlNJgYv575CbDmGFhS0mNr6bIvVFmTZp1lhGgtBuiH+A1F2SRoqSuQa0RFnSL5CjGE7PKKw5wFwDqKZfaSiuz8gagazQZDr+q0l1qkHul7JhBYbCR1krENwBRqY6X5BxpdhQd47fmlV97fI22smFCThQdmXTykJd0yidpMoyfxCMtOiS4agtzoxsK9DdhxukyRXMMD7zkTYay+2XHu7LOn6Os3Sb2pQDILt4WAMuicJbmOkrxU3zhUtYcIa2dyhtpowGCr1aGXVnaCqy0xsLSViXVdSSLJdj9j48EiCLJOY6mYxRS2QKb8AJ6nhQYigCY8oZJF2RJBqLIesCG2FEpwGcDADGYeJaiA49riH9LF2RJujyLj2IjRfptNID2cIDp6krfZM0RkvtFJLXT0XQMb3lCgLATskK7ALcqqbSorFP+WzFeRsnwzRMEQDtlRs0HCEvQGUB+EQToK5l0WlS2WEJy/+VNhiNJKDM+WwgQOtRBREV5Pp2ZkCyWkBcVpH2mX4sjclCYCQ6Q2UEnsIOXqURUYsQova4fk6zJMIJ6AW7QrquWSovKdIy8cBm/WILKFwRFE7FhSx1YjZbbUHb4RuCvhbOdCuDX6/kxMRu0CBFIWTgLABLoF/Gd7VMWLlERLqXY7c61ZCv+PssuIdUxI+7KSogIlxhA8xUEvFQEvKkaLGRGTNIcwf0YL+4CCZsMo67cDXjNWeVNkLmfSNeqLdMx0vsv99VHBIgpizLfeS33pjfplJyD0mBc5scQS5GYmX+PqEQx6YRL63MLCqwH8dOGKTpSZI3MsuYIuR+TtMlw4Mpv4SALP204Bz0WqRO/tlzHyIYni5VG3ULIfgqODCZ+5xTsNMQeiw8pXJn44jw0kseLqKyu8XVUCRXrQf3UfZUvmPCLL8md0XysgFFKZRrZltU1nqTowQvjs2xRfMFOGcVom93yWWKAxN/JcNjwpH4MUSQikKbJMEyuDdtbQPmMtg0Feik9tPRq8l7Y4uPY0gK//5JxSPwYM8GCrChiCLAAukthd04lM8tr9GlL2EwHQgFlGMgEfoykriG3o0NG5jfKbPol7PVJbidw5XVyO8EckWLxy+cnvLIZUdiUN2DJdEyqJsMwiZ7YGg/nc+sM4BzfwtA7hzMxLtLl7q08lokeP/L6eOnJN6+Q65iRiNjYRgLrCKGNZBWWZZ2J7X/SIHRdQmyLl/yK1vM/oH4LaRDK77/sOrJNoJItyIoAGFSwRSOQZkCn0xK2WSQ+aafvqgxOnqGE+i1npqyRnMj6M9I2GXavbHVbuUzKe9UyOzmxaEJXJ7ZHPrCFnxPFmalA/VaSjyGyDVqy2VFPsPA7YvnyHnOnhO2UXW/0acpFBeExw08C2icvcSPl/RmfRt2t037KjxpTVX4Vc62EDbHU3wModUNsDIT4l6V+zKjBoL01IfbtoLCxKm9pBi0jWppHS0UOfI30Im68jhmtcMZjMNLgJ1NgSzNf58q77vlOhmKjRvWf33DAgpJk84TRbrStbMMGx7yRC3c7ZABL/LAFLwunDKVtlRmRiGSXMUpTJfhC1yUPMdrtWVbQNIOFIWmTv6NS8Un8sl3pTnrDyIbqLq41N5u4rEA7wKU9uAK783uOWfjy+FFWtCIOVpho6kZmn4hYTA/byMFSc1h9VvcXZ2FP7G9AyI1J5fkfwxz2UXcEJvb/ikWu4cVZBlhCf3nd1s0ewhMejZJnxB12SvtQjtBkiJe0WzqmK6DLKVgBugqWUCyQ/B0H1YjhgD3hrqxouAyiEmckP4YouGmsjrVPE06B7y5x9a5G69u+PnEwLCzhDrsQ2RGL84r7Hru4YP+xtqH5AEvzYOtxp5XfpEf7RubzksDEHNGPsbGBhO9dxdvUugBh23fqvcCoN/F+cTdAokcv+aLWng/buJsFFM6oudgFqOF2R6hHJz78Fj06dJSWRdzRDuQiir9RgAMSGt6NBGSUosOtx2/6fuNEkviykR8kuCkq7A4/+Sa8l0UG9r11lvwM/n8U4MhE/M06uCrOhTfr4KtAzaAGk3ql+X8LVVqhqku9b8ujBVAz/oY5ssbRnv1SiNK/f4rfpE163xGa2r2fISHqvUpwIXkrKyH/4C4BuAvnesSWR1SYQl1yNog1XeA07RvMAlKQzSGuVeh5TjycDvLKhIRf776/r8GXWNOC+l+JAii2PCpfUd8PDQMsvQJTCIvQVOZxx5B1ewroV4F/JVEq+HDqvo+QWHfEU7emYVh3X+LD7913iDfcAcyF7+Lh34VQGEiswveXP+5pmnbvx6/707LjIPxtHjCQeJUxtB6AsO0Ypa9hnaQau8yucAs/cg9YSMhdcYnb/vDd6Z/iqYwLt2D6Hj76WcBB2tYd8foMHzYpiNcz9wpdL4NMf4enNdy76Mf9OITspcoFD+V5JzPfrXnR6OOgCCkc3d+xY7hEdAFacOl+gGzCBBf9uwAAfuGjjN+vOT2Fe5z+AA5b9zNGcI1gWk7/yvRQ6X4hFiGmC1X0YurB9o0BQK0Zyo9OXFSGW3spQP8NAQIyg1KS+V6Ah/b0PRwA4FcKU8FwXk6L7JxS+DvY59XAu1OKlVH7IrxXczPYgDO8eSPEnrj/v94Zbu2lAKd/+JcsZWaQYz9KYvwAUJkRTHGRV76Estts+QAtAe/Hy5f+y78KMRzsiBNSYDFfWxvgYAa3VqMe7tkRt/2mDKA1k+luYPprGp4S7CghQP8KPzm/iHW7O4aM0EPE+g6AM1Nch75EPt4rDLvpRLRQYkI7ay6UInan1KDWK/bYjttAVQJQzDgDZ/k9lDlLyNsdAOizGNAQHH+mxD9g/JyGeJQUpvAtMxZTSW4JD6i7O6SuQGxyCI0H3Q1UowCWILAXG3DqW0PrMCGAJIqDQuKEjgBIigCRmQIpIyhBJdRkFRzNFBNorZS5iwbPBzjFbeD01I+fL6d+/ZoZxkAFI3kxAzGUHwDIWEihIQFnYfnjsMxdFyCS1QOQMJ0IZIGclqZAjwgxNIChTPzgzMCXIL4F/shgaBlA9vtWAQH+AuXC5PLl3zNo67kfED0iYn9UdX+3KhYvV4fss51ZA3/tNW68ckKGbM8VKMl7goweDop7/2P6JbIJ3QFLnAPBlU5BzKnbKKE/OTKG9of4HKAILCV80dSdQiHGkyHuCban8f47Ork+ZJ9tdlNBgHGDvAl12EbiPkBN3OOuDcOXcYL/mv7OX9HYRONO6PQUfuSWxbQmvINxk8d9lovD+e7bPdC7NlO8YpiosO79Kg7VoYTgySj6OR61YGhDABraAj8wObQVfCzAfkKATBg17ibdse4i0p+cJcTnyI/pvP/nFChFvJrGFMh9fBqNAWEfN0IbgjMZvj09RECFidBrV1DVDe1g3AdQy2jtXCioaFmRHls8wMLLErJHQZkzSnAoHPFte0Hx/RrwXV3xLiaZ0yDFGpumKNQzP0IXN9inv0e5Mvyc5Za/72Y4TooAyM/07jnQ5l3kUphAREtaiVFwqrgAiA+YS+K/77vVddf4IzHZhAHp8m36JUrjHaFLrMLf9zLdA0yZ5r0bgY+J83txKgokxc258EbwA8cxGFDuFcvtJqLzT/7A+w/i4gAJ87AQR8GyhL/yA835jI9c/HEL3VRhDu5bLHbAqwbuGilM35+6F/qmqUEhZaFWBzSo2H8kd1rS4gDyTfJEOXRoKSYwEzP3gXx9Bxz0bTh7+s4McEQTN569wgdamv4b2TLDGSW8UqM0c/+OuJBRKsCkZSzkYeL0zPeXIKD8G6ejGIiHZHMNg7sX9x5r03/mS+kNpJ/2eDGNBYYPI44dDBl6oEoIIOOT1uUu2glu2vBjBn90/yUA/DHNQz+mcPrfDw4OsSrFmfu3v/N4sTB9F++aoUVMQrHlpqrCyUvyQ2009Lk9fiyR3lBhly4yFKDS68kwobqFg9TAgOCcMkBG7fzdDFjyX/cAEg8kCDeJGrJZy/h84i6qJSQdvXOhdwNXPESVbeGX7ONxIbJjiTI8CUyDvREYxjzpF9MYX7QbSPTQfdSjPzNd1Ci3lm//e8lCY5MB75xnZu7639g3FCLW6+rqCp7nOnj6WcTRYK9QSNEl1bdsq09IYzjIbFnUIYDogYK7JrhkQCChYMwwQH+zKwl5neLzgHkJ8OjndD8+/xzJ8h44obODB/RFHc/Xhg1KlmrCoan0CWkMB32dGBCobE0oh0LouBmwaaSb2+ghBsT3zjM/vt+57f99u1dEiSIO/9Zrr8GHSXS4W0ZsiEu7x/OR5AAxi5L5PoOEKoS7NUrIJHBNiWLhCj7dEe8H7479n+HaqteegV4KD4TAQSG4TdwZLBU05xIesJiB8+v4xv64Mfxhb0l0OEChDEqZAupXy4/VX07z+JlPLKP7hOL6RpNxGN9vCx7fAn9HqB94yvANS5d9Ll8/AJ0TDSgrMgGNOPU7CmDVqPMWSwc3gBhYMDIcYEHI0k9fGfg8E5Hf9L2SuIW3YYtBYRrZRMOR88gC3sD0LiSduiKtMbPbowy4hRdHkJfhtGHYyXCQIjmoHThg7ndrECXrLHJyowD2pw1d8detgp9Z8bMR3wvgmfiJsnswmXz3GgwfvD9wc+/zAOROaIbeu2X1RYO2e8IFVJ+o7eJ50auRRw0POUl5AR2aI3EMb2+b5cztO0AY4CoVfHTnrnL3tv+X/25bvHZfBP/BQ/jkjHgYsMbyrzXD74c17d6+9ZLR1N/3eTwY5h9zQFo4NlxG1x9ESABWM6/QGv6fQLgVDn7FBPNvu/+YkO4rg+/FcfW+7r8YnlnhZ1zmrGHi3rJ62iDZVzEDoXdjiGxufsiR7UMP+96AM3zoueofhR2y930lktDzpP8ZpZcIiXq2/2JBUab71p6vJJZfiNDVc+goMjeG4BgO8AD6HbxJkepWj1M1A98ocQMhDvtWdd5gnDWz1QgFGg/QAJeNxYaqOI33ONUC2JskW7GPJ8Qh63vQeWIu9ltNKUB+HrYJPERjwSKL43R7xN8QsTG4Pv94Xy8IaHMY/+IAasYanvi9LLxS9RmYhf8wPgaPbGFyegLP4+Mx0igAGc3maBchtxbRSZrfSq7limPM9dqyA8e7zJeGwosFqBnGqeBhTSA8yfdXmX8z8TrniXBgasu8bZnmTodNPzkHsSMf2oF1AfHQtUbthx8HPtc+1AX/8LBBOrkTBy8eoMac1w3UNFdCSvXyx6I1YhvLGPD58QOchwmLUHIbw6dfAg4yhG2wFgyhjrkd9SG6Wb8fHd9CkMd/0G+mbqJ81quxAioByCOLah15uKcL1cxUTeVx6c4AAAWgSURBVMLjlccKj3D9siX4p+p7IJ+5ejw6OcAqw1gHXepkz8sTePca/4zWMn4dfIqr2Ns6xn96+RwWSDH5rEaEuKkAQv56BxBSh3ne4nD0h7/b5hMQT9QDE+UHsAgsm9uJSgClBqhpBupS6h2huWA2/7Iz0JZ0o/iI3Wn5+GpHHvhnuVNNomASAeQYDchhwEpY3bcX78lI69RGw2fb7wU8XYXz9/j8m08w9IQAq3BCL5fSvQCg2upUrN/ARZAUxj7fOjT2cAcMcy3Of0kFkAm6UWpih4LDJqIQ0wn1IWF+/Q2rG8KD94eqqvOtDPSJ2hmusjD7z/S+DkCkRYqn2HpL5UBaTj7aIzbnJgdI7I8nXfF87SG+7GJCfIkBapmDjUlk4t55WXQLTahbhyOvqExANm/D9qWTac+VPch/ZsE8jBkgxyhUDdOmiJBPxYnjTuWG2vR5xaZzrAZfhcckQwI0U5Lbh9QAtaqxYAptunfu+6aMixdFG5pdxwuT5yUsvqG0n/w83/Ng/uXMBeZBRhZtrgeQ02odPFN+Xq+qdhXqh45tx/fQpoankErnQvVNH5t9S2gc6GR9VT7OUQFWtcz8ZBZ1zd6DQE55OuPQcsdj+vklOPcOj9UJUJ38FtbOhHHImq8kzvW1ADIqzVET/EDqXZ2XfYQMYust4WwcAxdtm1Tetvy5x9ernvPUBIhney4lvrQAme6qvjLRFjnOriqmIgykwST1mmzkH3btzocGtgjg5NN3PTQOudys3Lm+JkDQznPtSZyJ1NvXfYhc3aiX70GnjraxK9eadiX//lLFoAE7lPUlsT8+i40WM0m8z+sB5FTNzOdMnBIe3Q/0OOgbfetdp1IZZftv4jKP+t1WoFjAMSsvZXGxL50019JiGxkgu4sHOznfKNL9RjnQdnw2qq2H22w+EtKTex8CS/CO2MT+5ynjHfPJ/PulMu5RjwrpPF3NaKnlc0SAnErNOiJkHjh9zX2bLh8ZIxvHTzlIV7Lvs23Z/Fa41vbTZ0zEQ7zTmWrZpWjZadasz5XkYxorQKNUWvACiN7Vg5C+QcvBOHnx7jBvVzgzu+tXhBkAYurSVg7fXrT4u/WJkKiXy2dXnuAenfQWMkY1se8yHoDQcb6eNXH+Zx1vb/+8BgVJXagc3sDA6GTrw9O324ccVIVhZWoEfipKZ/vj0w9bJyqA0wMB4GahfL7EvU7oL6c5us57gUcRz+sB5Inh6pojuMgmo3d1pJfDOiIQWIDQuGxtPTtmtLXVumwAi9nTA29Xa/rRphessjfN9fSmYUwAeVtUxligOWwE54bRu3rRKJcD/zGYTxM+ixAWcmoiZOzwTWq51nhx5Tlo9hjzzPYC5C7/QwAz0FSnNeumSQM+0s39lXKvzklCDHa5trK/ST1/DwhqTm40M6PqlnEB5FTKLL4yc77CYaLqZZePzpme6IprJNqwTqmVV46WKVcr1LcLuVej2PWbAMioVF2o53LBng2U8+Fq6YyJaxnm3+DEBKlkU5BjazxYusp63fN8WERr1tcPBhpSR6LxAOQ6bvVN22ejUKyMlZvL+w9WGqpaKwPhFCwLUhsrZ/u7m1nPc5zQhha5XPvNKmfetbnHaTwAcfGUMTefBVkNBsuPu2bDn9zbXN5d2j86evHi7OzFi6Oj/aXd5c29Scfr7n6AP3JMr8zPGf4lx0DjAujT6tqGGWJkF6fDkfKf8NuLOC4sZ5rmxtqqMdgxeB0aI0ANdUKp2pxlenUyFwaAbKKCsn0bkFDOObM+36zyprQxyaagcXMQyNCqzbVTxpBJ08zGE+W3wszurDV5HWycyATdBEBN5IQOmuuzGwwBU/n8fxiXCc8ytrU3ZtfnDkqgU8bKOZ9uhINh0g5Wm821N7OnG/V2G7p2KG3XN05n59cX5lYTJ8dGpv8HGggx0idnFOcAAAAASUVORK5CYII=">
+  <title>Havas qima
+  </title>
+  <!-- Sherzod -->
 </head>
+
 <body>
-    
+  <header class="w-full bg-white font-sans text-gray-800 selection:bg-yellow-400">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 shrink-0">
+          <img src="images/logo.png" alt="Havas Logo" class="w-full h-full object-contain" />
+        </div>
+
+        <div class="text-sm font-semibold text-gray-700 leading-tight">
+          +998(71)205-95-95
+        </div>
+      </div>
+
+      <div class="flex flex-1 items-center justify-center gap-6 w-full max-w-3xl">
+        <div class="flex items-center gap-3 text-xl text-gray-600">
+          <a href="#" class="hover:text-amber-600 transition-colors"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-blue-600 transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+          <a href="#" class="hover:text-sky-500 transition-colors"><i class="fab fa-telegram"></i></a>
+        </div>
+
+        <div class="flex flex-1 relative max-w-xl">
+          <input type="text" placeholder="Поиск..."
+            class="w-full border border-gray-300 rounded-full py-2.5 pl-5 pr-28 outline-none focus:border-orange-500 text-sm transition-colors" />
+          <button
+            class="absolute right-0 top-0 bottom-0 bg-[#e86123] hover:bg-[#d0521a] text-white px-7 rounded-full text-sm font-medium transition-colors">
+            Поиск
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-sm font-medium text-gray-400">
+        <a href="#" class="text-black border-b-2 border-black pb-0.5">Ru</a>
+        <a href="#" class="hover:text-black transition-colors">Uz</a>
+        <a href="#" class="hover:text-black transition-colors">En</a>
+      </div>
+
+    </div>
+
+    <div class="border-b border-gray-200"></div>
+
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-y-4">
+      <nav
+        class="flex flex-wrap items-center gap-1 md:gap-2 text-xs md:text-sm font-bold tracking-wide text-black uppercase">
+        <a href="#" class="bg-[#fcdb00] hover:bg-[#ebd200] px-5 py-2.5 rounded-full text-black transition-colors">
+          Главная
+        </a>
+        <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+          О нас
+        </a>
+        <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+          Магазины
+        </a>
+        <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+          Новости
+        </a>
+        <div class="relative group">
+          <button class="px-3 py-2 hover:text-gray-600 flex items-center gap-1 transition-colors uppercase font-bold">
+            Специальные предложения
+            <i class="fas fa-chevron-down text-[10px]"></i>
+          </button>
+        </div>
+      </nav>
+
+      <div class="flex items-center gap-1 md:gap-2 text-xs md:text-sm font-bold tracking-wide text-black uppercase">
+        <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+          Для партнёров
+        </a>
+        <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+          Вакансии
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="mt-[150px]  flex justify-center">
+      <img src="images/dddddd.jpg" alt="">
+    </section>
+    <section class="mt-[200px] flex justify-center">
+      <div class="container flex justify-center gap-[40px] ">
+        <div>
+          <nav>
+            <a href="./about.html">
+              <div class="w-[378px] h-[303px] bg-[#F7F7F7] p-[30px] flex flex-col justify-between font-sans">
+                <p class="text-[22px] text-[#30922F] font-bold uppercase leading-tight tracking-wide">
+                  Предложение<br />недели
+                </p>
+
+                <div class="flex justify-between items-end gap-[15px] mt-[10px]">
+                  <div class="w-[160px] flex items-center">
+                    <img src="images/1.jpg" alt="Магкий пластилин" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex flex-col items-end text-right flex-1">
+                    <p class="text-[18px] text-[#30922F] font-bold leading-snug mb-[15px]">
+                      Мягкий<br />пластилин 12<br />подушечек
+                    </p>
+
+                    <div class="flex flex-col items-end leading-none">
+                      <h1 class="text-[#E96023] text-[55px] font-extrabold flex items-baseline leading-none">5<span
+                          class="text-[28px] font-bold ml-[3px] relative -top-[15px]">950</span>
+                      </h1>
+                      <p class="text-[20px] text-[#30922F] font-extrabold mt-[2px] tracking-wider">UZS</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </nav>
+        </div>
+        <div>
+          <nav>
+            <a href="./about.html">
+              <div class="w-[378px] h-[303px] bg-[#F7F7F7] p-[30px] flex flex-col justify-between font-sans">
+                <p class="text-[22px] text-[#30922F] font-bold uppercase leading-tight tracking-wide">
+                  Предложение<br />недели
+                </p>
+
+                <div class="flex justify-between items-end gap-[15px] mt-[10px]">
+                  <div class="w-[160px] flex items-center">
+                    <img src="images/2.jpg" alt="Магкий пластилин" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex flex-col items-end text-right flex-1">
+                    <p class="text-[18px] text-[#30922F] font-bold leading-snug mb-[15px]">
+                      Мягкий<br />пластилин 12<br />подушечек
+                    </p>
+
+                    <div class="flex flex-col items-end leading-none">
+                      <h1 class="text-[#E96023] text-[55px] font-extrabold flex items-baseline leading-none">5<span
+                          class="text-[28px] font-bold ml-[3px] relative -top-[15px]">950</span>
+                      </h1>
+                      <p class="text-[20px] text-[#30922F] font-extrabold mt-[2px] tracking-wider">UZS</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </nav>
+        </div>
+        <div>
+          <nav>
+            <a href="./about.html">
+              <div class="w-[378px] h-[303px] bg-[#F7F7F7] p-[30px] flex flex-col justify-between font-sans">
+                <p class="text-[22px] text-[#30922F] font-bold uppercase leading-tight tracking-wide">
+                  Предложение<br />недели
+                </p>
+
+                <div class="flex justify-between items-end gap-[15px] mt-[10px]">
+                  <div class="w-[160px] flex items-center">
+                    <img src="images/3.jpg" alt="Магкий пластилин" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex flex-col items-end text-right flex-1">
+                    <p class="text-[18px] text-[#30922F] font-bold leading-snug mb-[15px]">
+                      Мягкий<br />пластилин 12<br />подушечек
+                    </p>
+
+                    <div class="flex flex-col items-end leading-none">
+                      <h1 class="text-[#E96023] text-[55px] font-extrabold flex items-baseline leading-none">5<span
+                          class="text-[28px] font-bold ml-[3px] relative -top-[15px]">950</span>
+                      </h1>
+                      <p class="text-[20px] text-[#30922F] font-extrabold mt-[2px] tracking-wider">UZS</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+      </div>
+
+
+    </section>
+    <section class="bg-[#efefef] py-20 mt-[200px]">
+      <div class="bg-[#f7dd00] py-8">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="text-center text-[22px] font-normal uppercase ">
+            НЕ ПРОПУСТИТЕ СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ! КАТАЛОГ ПРЕДЛОЖЕНИЙ
+            ОБНОВЛЯЕТСЯ КАЖДУЮ НЕДЕЛЮ
+          </h2>
+        </div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 mt-24">
+        <p class="text-[22px] leading-[2.4] text-black">
+          HAVAS – сеть дискаунтеров «у дома». Мы предлагаем нашим покупателям
+          качественные продукты по выгодной цене. В наших магазинах представлены
+          товары известных мировых и локальных брендов, а также товары собственного
+          производства.
+        </p>
+
+        <div class="flex justify-center mt-20">
+          <button class="bg-[#f7dd00] px-16 py-4 rounded-full text-3xl font-semibold hover:scale-105 transition">
+            Подробнее
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="bg-[#f3f3f3] py-10 mt-[200px]">
+      <div class="max-w-7xl mx-auto px-5">
+
+        <div class="mb-8">
+          <h2 class="text-4xl font-bold uppercase relative inline-block">
+            Новости
+            <span class="absolute left-0 bottom-1 w-full h-4 bg-yellow-400 -z-10"></span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-12 gap-4">
+
+          <div class="col-span-3 bg-white p-8 flex flex-col justify-between min-h-[285px]">
+            <div>
+              <h3 class="text-4xl font-bold leading-tight uppercase">
+                Как дискаунтеры HAVAS изменили рынок торговли в Узбекистане
+              </h3>
+            </div>
+
+            <div class="text-gray-400 text-lg">
+              <p>Добавлено:</p>
+              <p>30.04.2026</p>
+            </div>
+          </div>
+
+          <div class="col-span-5 relative overflow-hidden">
+            <img src="images/bir.jpg" class="w-full h-full object-cover" alt="" />
+
+          </div>
+
+          <div class="col-span-4 row-span-2">
+            <img src="images/ikki.jpg" class="w-full h-full object-cover" alt="" />
+          </div>
+
+          <div class="col-span-3">
+            <img src="images/uch.jpg" class="w-full h-[290px] object-cover" alt="" />
+          </div>
+
+          <div class="col-span-5">
+            <img src="images/tor.jpg" class="w-full h-[290px] object-cover" alt="" />
+          </div>
+
+        </div>
+
+        <div class="flex justify-center mt-14">
+          <button class="bg-yellow-400 hover:bg-yellow-500 transition px-14 py-4 rounded-full font-bold text-xl">
+            Смотреть все новости
+          </button>
+        </div>
+
+      </div>
+    </section>
+    <section class="bg-[url(../images/bgimg.png)] bg-cover w-full  mt-[200px]">
+            <div class="container mx-auto px-5">
+                <div class="flex gap-[40px]">
+                    <div>
+                        <h2 class="text-black text-[24px] font-bold inline-block shadow-yellow-500 pb-[40px] mt-[20px]">Хотите задать вопрос?</h2>
+                        <p class="mb-[10px] text-black text-[20px] font-medium">Позвоните нам</p>
+                        <p class="text-black text-[22px] font-medium mb-[10px]">tel:+998712059595</p>
+                        <p class="mb-[15px] text-black text-[20px]">Напишите нам</p>
+                        <form>
+                            <label class="">
+                                <input type="email" name="email" required placeholder="Напишите ваш e-mail" class="px-[30px] py-[8px] w-[556px] border-[1px] border-[#BDBDBD] rounded-[5px]">
+                                <p class="text-[#BDBDBD] text-[12px]">Обязательное поле для заполнения*</p>
+                            </label>
+                            <br><br>
+                            <label class="mt-[20px]">
+                                <textarea name="text" placeholder="Напишите сообщение..." cols="30" rows="5" class="px-[30px] py-[8px] w-[556px] border-[1px] border-[#BDBDBD] rounded-[5px]"></textarea>
+                            </label>
+                        </form>
+
+                        <button class="text-black bg-[#FADF00] mt-[25px] py-[10px] w-[166px] rounded-[50px] font-medium">Отправить</button>
+                    </div>
+
+                    <div>
+                         <iframe class="w-[560px] h-[360px] mt-[40px]" src="https://yandex.uz/map-widget/v1/?feedback=map%2Fedit&feedback-context=map.controls&from=api-maps&ll=69.562542%2C40.587507&origin=jsapi_2_1_79&pt=69.605889%2C40.839444~69.612060%2C40.848089~69.599620%2C40.867108~69.351917%2C40.900139~69.197968%2C40.814509~69.303139%2C40.996083~69.358432%2C41.037416~69.044910%2C40.869560~69.236333%2C41.004167~68.950806%2C40.863000&utm_source=jsapi&z=8" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  </main>
+   <footer class="pt-[56px] pb-[20px] mt-[200px]">
+        <div class="container mx-auto px-5">
+            <div class="flex border-b-[1px] border-[#BDBDBD] ">
+                <img src="images/logo.png" alt="logo" class="w-[138px] h-[173px] mr-[140px]">
+
+                <ul class="flex mb-[40px] ">
+                    <li class="mr-[140px]">
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">О нас</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Магазины</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Новости</p>
+                    </li>
+
+                    <li class="mr-[140px]">
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Специальные предложения</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Статьи</p>
+                    </li>
+
+                    <li class="mr-[140px]">
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Для партнёров</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Карьера</p>
+                        <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">Анкета</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex justify-between pt-[20px]">
+                <p class="text-[12px] ">Сайт разработан компанией Division</p>
+                <img src="../images/lo.png" alt="icons">
+            </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>
