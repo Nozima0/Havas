@@ -1,12 +1,585 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="../images/pridlojeniya/logo.svg" />
+    <title>Специальные предложения - HAVAS</title>
     <!-- Abdulloh -->
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header class="w-full bg-white font-sans text-gray-800">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 shrink-0">
+            <img
+              src="../images/pridlojeniya/logo.svg"
+              alt="Havas Logo"
+              class="w-full h-full object-contain"
+            />
+          </div>
+
+          <div class="text-sm font-semibold text-gray-700 leading-tight">
+            +998(71)205-95-95
+          </div>
+        </div>
+
+        <div
+          class="flex flex-1 items-center justify-center gap-6 w-full max-w-3xl"
+        >
+          <div class="flex items-center gap-3 text-xl text-gray-600">
+            <a href="#" class="hover:text-amber-600 transition-colors"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="hover:text-blue-600 transition-colors"
+              ><i class="fab fa-facebook-f text-lg"></i
+            ></a>
+            <a href="#" class="hover:text-sky-500 transition-colors"
+              ><i class="fab fa-telegram"></i
+            ></a>
+          </div>
+
+          <div class="flex flex-1 relative max-w-xl">
+            <input
+              type="text"
+              placeholder="Поиск..."
+              class="w-full border border-gray-300 rounded-full py-2.5 pl-5 pr-28 outline-none focus:border-orange-500 text-sm transition-colors"
+            />
+            <button
+              class="absolute right-0 top-0 bottom-0 bg-[#e86123] hover:bg-[#d0521a] text-white px-7 rounded-full text-sm font-medium transition-colors"
+            >
+              Поиск
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 text-sm font-medium text-gray-400">
+          <a href="#" class="text-black border-b-2 border-black pb-0.5">Ru</a>
+          <a href="#" class="hover:text-black transition-colors">Uz</a>
+          <a href="#" class="hover:text-black transition-colors">En</a>
+        </div>
+      </div>
+
+      <div class="border-b border-gray-200"></div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-y-4"
+      >
+        <nav
+          class="flex flex-wrap items-center gap-1 md:gap-2 text-xs md:text-sm font-bold tracking-wide text-black uppercase"
+        >
+          <a
+            href="./index.html"
+            class="px-5 py-2.5 text-black transition-colors"
+          >
+            Главная
+          </a>
+          <a
+            href="./about.html"
+            class="px-3 py-2 hover:text-gray-600 transition-colors"
+          >
+            О нас
+          </a>
+          <a
+            href="./magazin.html"
+            class="px-3 py-2 hover:text-gray-600 transition-colors"
+          >
+            Магазины
+          </a>
+          <a
+            href="./yengilik.html"
+            class="px-3 py-2 hover:text-gray-600 transition-colors"
+          >
+            Новости
+          </a>
+          <div class="relative group">
+            <button
+              class="bg-[#fcdb00] hover:bg-[#ebd200] rounded-full px-3 py-2 hover:text-gray-600 flex items-center gap-1 transition-colors uppercase font-bold"
+            >
+              Специальные предложения
+              <i class="fas fa-chevron-down text-[10px]"></i>
+            </button>
+          </div>
+        </nav>
+
+        <div
+          class="flex items-center gap-1 md:gap-2 text-xs md:text-sm font-bold tracking-wide text-black uppercase"
+        >
+          <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+            Для партнёров
+          </a>
+          <a href="#" class="px-3 py-2 hover:text-gray-600 transition-colors">
+            Вакансии
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="main">
+      <section class="section1">
+        <img src="../images/pridlojeniya/gelik.img" alt="" class="mt-[100px]" />
+        <div class="container max-w-[1200px] mx-auto">
+          <div class="mt-[120px]">
+            <h1 class="text-[30px] font-extrabold">Специальные предложения</h1>
+            <p class="text-[26px] underline decoration-double mt-[30px]">
+              Предложение недели
+            </p>
+          </div>
+
+          <div class="mt-[60px]">
+            <nav class="p-[7px] grid grid-cols-3 gap-x-[30px] gap-y-[50px]">
+              <a href="./about.html">
+                <div
+                  class="w-[378px] h-[303px] bg-[#F7F7F7] p-[30px] flex flex-col justify-between font-sans"
+                >
+                  <p
+                    class="text-[22px] text-[#30922F] font-bold uppercase leading-tight tracking-wide"
+                  >
+                    Предложение<br />недели
+                  </p>
+
+                  <div
+                    class="flex justify-between items-end gap-[15px] mt-[10px]"
+                  >
+                    <div class="w-[160px] flex items-center">
+                      <img
+                        src="../images/pridlojeniya/plastilin.img"
+                        alt="Магкий пластилин"
+                        class="w-full h-auto object-contain"
+                      />
+                    </div>
+
+                    <div class="flex flex-col items-end text-right flex-1">
+                      <p
+                        class="text-[18px] text-[#30922F] font-bold leading-snug mb-[15px]"
+                      >
+                        Мягкий<br />пластилин 12<br />подушечек
+                      </p>
+
+                      <div class="flex flex-col items-end leading-none">
+                        <h1
+                          class="text-[#E96023] text-[55px] font-extrabold flex items-baseline leading-none"
+                        >
+                          5<span
+                            class="text-[28px] font-bold ml-[3px] relative -top-[15px]"
+                            >950</span
+                          >
+                        </h1>
+                        <p
+                          class="text-[20px] text-[#30922F] font-extrabold mt-[2px] tracking-wider"
+                        >
+                          UZS
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-[377px]">
+                  <h3 class="text-[22px] font-semibold mt-[35px]">
+                    Мягкий пластилин 12 подушечек
+                  </h3>
+                  <button
+                    class="mt-[30px] h-[45px] pr-[40px] pl-[40px] text-[18px] border-2 border-[#E96023] rounded-full text-[#E96023] font-semibold"
+                  >
+                    Подробнее...
+                  </button>
+                </div>
+              </a>
+
+              <a href="./about.html">
+                <div
+                  class="w-[378px] h-[303px] bg-[#F7F7F7] p-[30px] flex flex-col justify-between font-sans"
+                >
+                  <p
+                    class="text-[22px] text-[#30922F] font-bold uppercase leading-tight tracking-wide"
+                  >
+                    Предложение<br />недели
+                  </p>
+
+                  <div
+                    class="flex justify-between items-end gap-[15px] mt-[10px]"
+                  >
+                    <div class="w-[160px] flex items-center">
+                      <img
+                        src="../images/pridlojeniya/pistolet.image.png"
+                        alt="Магкий пластилин"
+                        class="w-full h-auto object-contain"
+                      />
+                    </div>
+
+                    <div class="flex flex-col items-end text-right flex-1">
+                      <p
+                        class="text-[18px] text-[#30922F] font-bold leading-snug mb-[15px]"
+                      >
+                        Водный пистолет 13 см в ассортименте
+                      </p>
+
+                      <div class="flex flex-col items-end leading-none">
+                        <h1
+                          class="text-[#E96023] text-[55px] font-extrabold flex items-baseline leading-none"
+                        >
+                          14<span
+                            class="text-[28px] font-bold ml-[3px] relative -top-[15px]"
+                            >950</span
+                          >
+                        </h1>
+                        <p
+                          class="text-[20px] text-[#30922F] font-extrabold mt-[2px] tracking-wider"
+                        >
+                          UZS
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-[377px]">
+                  <h3 class="text-[22px] font-semibold mt-[35px]">
+                    Водный пистолет 13 см в ассортименте
+                  </h3>
+                  <button
+                    class="mt-[30px] h-[45px] pr-[40px] pl-[40px] text-[18px] border-2 border-[#E96023] rounded-full text-[#E96023] font-semibold"
+                  >
+                    Подробнее...
+                  </button>
+                </div>
+              </a>
+
+              <a href="./about.html">
+                <div
+                  class="w-[378px] h-[303px] bg-[#F7F7F7] p-[30px] flex flex-col justify-between font-sans"
+                >
+                  <p
+                    class="text-[22px] text-[#30922F] font-bold uppercase leading-tight tracking-wide"
+                  >
+                    Предложение<br />недели
+                  </p>
+
+                  <div
+                    class="flex justify-between items-end gap-[15px] mt-[10px]"
+                  >
+                    <div class="w-[160px] flex items-center">
+                      <img
+                        src="../images/pridlojeniya/gubka.image.png"
+                        alt="Магкий пластилин"
+                        class="w-full h-auto object-contain"
+                      />
+                    </div>
+
+                    <div class="flex flex-col items-end text-right flex-1">
+                      <p
+                        class="text-[18px] text-[#30922F] font-bold leading-snug mb-[15px] w-[149px]"
+                      >
+                        Губка Nemo для мытья автомобиля
+                      </p>
+
+                      <div class="flex flex-col items-end leading-none">
+                        <h1
+                          class="text-[#E96023] text-[55px] font-extrabold flex items-baseline leading-none"
+                        >
+                          4<span
+                            class="text-[28px] font-bold ml-[3px] relative -top-[15px]"
+                            >950</span
+                          >
+                        </h1>
+                        <p
+                          class="text-[20px] text-[#30922F] font-extrabold mt-[2px] tracking-wider"
+                        >
+                          UZS
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-[377px]">
+                  <h3 class="text-[22px] font-semibold mt-[35px]">
+                    Губка Nemo для мытья автомобиля
+                  </h3>
+                  <button
+                    class="mt-[30px] h-[45px] pr-[40px] pl-[40px] text-[18px] border-2 border-[#E96023] rounded-full text-[#E96023] font-semibold"
+                  >
+                    Подробнее...
+                  </button>
+                </div>
+              </a>
+
+              <a href="./about.html">
+                <div
+                  class="w-[378px] h-[303px] bg-[#F7F7F7] p-[30px] flex flex-col justify-between font-sans"
+                >
+                  <p
+                    class="text-[22px] text-[#30922F] font-bold uppercase leading-tight tracking-wide"
+                  >
+                    Предложение<br />недели
+                  </p>
+
+                  <div
+                    class="flex justify-between items-end gap-[15px] mt-[10px]"
+                  >
+                    <div class="w-[160px] flex items-center">
+                      <img
+                        src="../images/pridlojeniya/chotka.image.png"
+                        alt="Магкий пластилин"
+                        class="w-full h-auto object-contain"
+                      />
+                    </div>
+
+                    <div class="flex flex-col items-end text-right flex-1">
+                      <p
+                        class="text-[18px] text-[#30922F] font-bold leading-snug mb-[15px]"
+                      >
+                        Щетка для мытья окон с телескопической длинной ручкой
+                        130 см
+                      </p>
+
+                      <div class="flex flex-col items-end leading-none">
+                        <h1
+                          class="text-[#E96023] text-[55px] font-extrabold flex items-baseline leading-none"
+                        >
+                          54<span
+                            class="text-[28px] font-bold ml-[3px] relative -top-[15px]"
+                            >950</span
+                          >
+                        </h1>
+                        <p
+                          class="text-[20px] text-[#30922F] font-extrabold mt-[2px] tracking-wider"
+                        >
+                          UZS
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-[377px]">
+                  <h3 class="text-[22px] font-semibold mt-[35px]">
+                    Щетка для мытья окон с телескопической длинной ручкой 130 см
+                  </h3>
+                  <button
+                    class="mt-[30px] h-[45px] pr-[40px] pl-[40px] text-[18px] border-2 border-[#E96023] rounded-full text-[#E96023] font-semibold"
+                  >
+                    Подробнее...
+                  </button>
+                </div>
+              </a>
+
+              <a href="./about.html">
+                <div
+                  class="w-[378px] h-[303px] bg-[#F7F7F7] p-[30px] flex flex-col justify-between font-sans"
+                >
+                  <p
+                    class="text-[22px] text-[#30922F] font-bold uppercase leading-tight tracking-wide"
+                  >
+                    Предложение<br />недели
+                  </p>
+
+                  <div
+                    class="flex justify-between items-end gap-[15px] mt-[10px]"
+                  >
+                    <div class="w-[160px] flex items-center">
+                      <img
+                        src="../images/pridlojeniya/asvejitel.image.png"
+                        alt="Магкий пластилин"
+                        class="w-full h-auto object-contain"
+                      />
+                    </div>
+
+                    <div class="flex flex-col items-end text-right flex-1">
+                      <p
+                        class="text-[18px] text-[#30922F] font-bold leading-snug mb-[15px]"
+                      >
+                        Автомобильный освежитель воздуха Areon X Card подвесной
+                        в ассортименте
+                      </p>
+
+                      <div class="flex flex-col items-end leading-none">
+                        <h1
+                          class="text-[#E96023] text-[55px] font-extrabold flex items-baseline leading-none"
+                        >
+                          24<span
+                            class="text-[28px] font-bold ml-[3px] relative -top-[15px]"
+                            >950</span
+                          >
+                        </h1>
+                        <p
+                          class="text-[20px] text-[#30922F] font-extrabold mt-[2px] tracking-wider"
+                        >
+                          UZS
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-[377px]">
+                  <h3 class="text-[22px] font-semibold mt-[35px]">
+                    Автомобильный освежитель воздуха Areon X Card подвесной в
+                    ассортименте
+                  </h3>
+                  <button
+                    class="mt-[30px] h-[45px] pr-[40px] pl-[40px] text-[18px] border-2 border-[#E96023] rounded-full text-[#E96023] font-semibold"
+                  >
+                    Подробнее...
+                  </button>
+                </div>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section2 py-[60px] w-full max-w-[1200px] mx-auto px-4 font-sans mt-[250px]"
+      >
+        <div
+          class="flex flex-col lg:flex-row justify-between items-start gap-[50px]"
+        >
+          <div class="w-full lg:max-w-[550px] flex flex-col">
+            <h2
+              class="text-[28px] font-extrabold text-[#111111] uppercase tracking-wide mb-[30px]"
+            >
+              Хотите задать вопрос?
+            </h2>
+
+            <div class="mb-[25px]">
+              <p class="text-[16px] text-[#666666] mb-[8px]">Позвоните нам</p>
+              <a
+                href="tel:+998712059595"
+                class="flex items-center gap-[10px] text-[22px] font-bold text-[#111111] hover:text-[#30922F] transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 text-[#111111]"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 0 1-7.108-7.108c-.145-.44.02-.927.396-1.21l1.293-.97a1.125 1.125 0 0 0 .417-1.173L6.963 3.107a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.75Z"
+                  />
+                </svg>
+                +998(71)205-95-95
+              </a>
+            </div>
+
+            <form class="flex flex-col w-full">
+              <p class="text-[16px] text-[#666666] mb-[10px]">Напишите нам</p>
+
+              <div class="mb-[20px]">
+                <input
+                  type="email"
+                  placeholder="Напишите ваш e-mail"
+                  class="w-full h-[55px] px-[20px] border border-[#E5E5E5] rounded-[6px] text-[16px] outline-none focus:border-[#30922F] transition-colors placeholder:text-[#A3A3A3]"
+                  required
+                />
+                <span class="text-[11px] text-[#A3A3A3] mt-[4px] block"
+                  >Обязательное поле для заполнения *</span
+                >
+              </div>
+
+              <div class="mb-[30px]">
+                <textarea
+                  placeholder="Напишите сообщение..."
+                  class="w-full h-[140px] p-[20px] border border-[#E5E5E5] rounded-[6px] text-[16px] outline-none focus:border-[#30922F] transition-colors placeholder:text-[#A3A3A3] resize-none"
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-[180px] h-[50px] bg-[#FFDE00] text-[#111111] font-bold text-[16px] rounded-full hover:bg-[#e6c800] active:scale-95 transition-all"
+              >
+                Отправить
+              </button>
+            </form>
+          </div>
+
+          <div
+            class="w-full lg:flex-1 h-[450px] border border-[#E5E5E5] rounded-[12px] overflow-hidden shadow-sm"
+          >
+            <iframe
+              class="w-[560px] h-[360px] mt-[40px]"
+              src="https://yandex.uz/map-widget/v1/?feedback=map%2Fedit&feedback-context=map.controls&from=api-maps&ll=69.562542%2C40.587507&origin=jsapi_2_1_79&pt=69.605889%2C40.839444~69.612060%2C40.848089~69.599620%2C40.867108~69.351917%2C40.900139~69.197968%2C40.814509~69.303139%2C40.996083~69.358432%2C41.037416~69.044910%2C40.869560~69.236333%2C41.004167~68.950806%2C40.863000&utm_source=jsapi&z=8"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="pt-[56px] pb-[20px]">
+      <div class="container max-w-[1200px] mx-auto">
+        <div class="flex border-b-[1px] border-[#BDBDBD]">
+          <img
+            src="../images/logo.png"
+            alt="logo"
+            class="w-[138px] h-[173px] mr-[140px]"
+          />
+
+          <ul class="flex mb-[40px]">
+            <li class="mr-[140px]">
+              <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">
+                О нас
+              </p>
+              <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">
+                Магазины
+              </p>
+              <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">
+                Новости
+              </p>
+            </li>
+
+            <li class="mr-[140px]">
+              <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">
+                Специальные предложения
+              </p>
+              <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">
+                Статьи
+              </p>
+            </li>
+
+            <li class="mr-[140px]">
+              <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">
+                Для партнёров
+              </p>
+              <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">
+                Карьера
+              </p>
+              <p class="text-[#8D8D8D] text-[20px] py-[10px] hover:text-black">
+                Анкета
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-between pt-[20px]">
+          <p class="text-[12px]">Сайт разработан компанией Division</p>
+          <p>.</p>
+          <img src="../images/icons.png" alt="icons" />
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
